@@ -98,45 +98,12 @@ def create_excel_report(benchmark_data: list[dict[str, Any]], output_file: Path)
 
     with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
 
-        spec_to_profession = (
-            df[["elite_spec", "profession"]]
-            .drop_duplicates()
-            .sort_values("profession")
-            .reset_index(drop=True)
-        )
-        spec_to_profession.columns = ["Elite Spec", "Profession"]
-
         colors_data = {
-            "Profession": [prof.title() for prof in profession_colors.keys()],
-            "Color_Code": [color for color in profession_colors.values()],
-            "Example": [prof.title() for prof in profession_colors.keys()],
+            "Profession": [prof.title() for prof in profession_colors],
+            "Color_Code": list(profession_colors.values()),
+            "Example": [prof.title() for prof in profession_colors],
         }
         colors_df = pd.DataFrame(colors_data)
-        colors_df.to_excel(writer, sheet_name="Colors", index=False)
-
-        colors_sheet = writer.sheets["Colors"]
-        colors_header_fill = PatternFill(start_color="FFB3D1FF", end_color="FFB3D1FF", fill_type="solid")
-        for col in range(1, 4):
-            colors_sheet.cell(row=1, column=col).fill = colors_header_fill
-
-        for idx, (prof, color) in enumerate(profession_colors.items(), 2):
-            colors_sheet.cell(row=idx, column=3).fill = PatternFill(
-                start_color=color,
-                end_color=color,
-                fill_type="solid"
-            )
-
-        colors_sheet.cell(row=7, column=5).value = "Elite Spec"
-        colors_sheet.cell(row=7, column=6).value = "Profession"
-        colors_sheet.cell(row=7, column=5).fill = colors_header_fill
-        colors_sheet.cell(row=7, column=6).fill = colors_header_fill
-        for sidx, srow in spec_to_profession.iterrows():
-            colors_sheet.cell(row=sidx + 8, column=5).value = srow["Elite Spec"].title()
-            colors_sheet.cell(row=sidx + 8, column=6).value = srow["Profession"].title()
-            prof_color = profession_colors.get(srow["Profession"].lower(), "FFFFFFFF")
-            colors_sheet.cell(row=sidx + 8, column=6).fill = PatternFill(
-                start_color=prof_color, end_color=prof_color, fill_type="solid"
-            )
 
         benchmark_order = ["dps", "alac", "quick"]
         for bench_type in benchmark_order:
@@ -186,6 +153,21 @@ def create_excel_report(benchmark_data: list[dict[str, Any]], output_file: Path)
                 type_worksheet.cell(row=row_num, column=5).value = f"=ROUND(C{row_num}/D{row_num}*100,2)"
                 type_worksheet.cell(row=row_num, column=6).value = f"=ROUND(D{row_num}*0.95,0)"
                 type_worksheet.cell(row=row_num, column=7).value = f"=ROUND(F{row_num}-C{row_num},0)"
+
+        # Write Colors sheet last so it appears as the last tab
+        colors_df.to_excel(writer, sheet_name="Colors", index=False)
+
+        colors_sheet = writer.sheets["Colors"]
+        colors_header_fill = PatternFill(start_color="FFB3D1FF", end_color="FFB3D1FF", fill_type="solid")
+        for col in range(1, 4):
+            colors_sheet.cell(row=1, column=col).fill = colors_header_fill
+
+        for idx, (_prof, color) in enumerate(profession_colors.items(), 2):
+            colors_sheet.cell(row=idx, column=3).fill = PatternFill(
+                start_color=color,
+                end_color=color,
+                fill_type="solid",
+            )
 
     print(f"Excel report created: {output_file}")
     print(f"Total builds processed: {len(df)}")

@@ -48,6 +48,8 @@ namespace
 auto DODGE_ICON_ID = 2;
 auto UNK_SKILL_ICON_ID = 0;
 
+static uint32_t s_right_click_skill_id = 0;
+
 
 SkillSlot GetSkillSlotFromSettings(const SkillID skill_id)
 {
@@ -396,6 +398,16 @@ void RotationRenderType::render_rotation_horizontal()
         ImGui::SameLine();
     }
 
+    if (ImGui::BeginPopup("##rota_skill_ctx"))
+    {
+        auto skill_id_str = std::to_string(s_right_click_skill_id);
+        ImGui::Text("Skill ID: %s", skill_id_str.c_str());
+        ImGui::Separator();
+        if (ImGui::MenuItem("Copy Skill ID"))
+            ImGui::SetClipboardText(skill_id_str.c_str());
+        ImGui::EndPopup();
+    }
+
     ImGui::Unindent(10.0f);
 }
 
@@ -448,6 +460,12 @@ void RotationRenderType::render_rotation_icons(const SkillState &skill_state,
 
     if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
         Globals::RenderData.is_not_ui_adjust_active = !Globals::RenderData.is_not_ui_adjust_active;
+
+    if (ImGui::IsItemClicked(ImGuiMouseButton_Right))
+    {
+        s_right_click_skill_id = static_cast<uint32_t>(rotation_step.skill_data.skill_id);
+        ImGui::OpenPopup("##rota_skill_ctx");
+    }
 }
 
 void RotationRenderType::render_skill_texture(const RotationStep &rotation_step,

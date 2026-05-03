@@ -19,6 +19,10 @@ An increase in the third number indicates bugfixes only.
 - Updated bench logs
 - Added bench excel file
 
+## Improvements
+
+- Added option for the user to add skills to be greyed out
+
 ## 4.3.0 - 2026-04-19
 
 ## Notes
