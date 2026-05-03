@@ -12,6 +12,19 @@ An increase in the first number indicates an big update of the rotation logs/bui
 An increase of the second number indicates changes in only the code logic.  
 An increase in the third number indicates bugfixes only.
 
+## 4.4.0 - 2026-05-03
+
+## Notes
+
+- Updated bench logs
+- Added bench excel file
+
+## 4.3.0 - 2026-04-19
+
+## Notes
+
+- Updated bench logs
+
 ## 4.2.0 - 2026-03-29
 
 ## Improvements

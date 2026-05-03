@@ -3,6 +3,7 @@ import json
 import logging
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 
 import requests
@@ -415,6 +416,36 @@ class SnowCrowsScraper:
             return False
 
 
+def update_version_header_build_date() -> None:
+    """Update BUILD_DATE in Version.h header file."""
+    version_header_path = SCRIPT_DIR.parent / "src" / "Version.h"
+
+    if not version_header_path.exists():
+        logging.warning(f"Version.h not found at {version_header_path}")  # noqa: LOG015
+        return
+
+    try:
+        # Generate current date
+        current_date = datetime.now().strftime("%Y-%m-%d")  # noqa: DTZ005
+
+        # Read current content
+        content = version_header_path.read_text(encoding="utf-8")
+
+        # Update BUILD_DATE define
+        build_date_pattern = r'#define\s+BUILD_DATE\s+"[^"]*"'
+        replacement = f'#define BUILD_DATE "{current_date}"'
+
+        updated_content = re.sub(build_date_pattern, replacement, content)
+
+        # Write back to file
+        version_header_path.write_text(updated_content, encoding="utf-8")
+
+        logging.info(f"Updated BUILD_DATE to {current_date} in Version.h")  # noqa: LOG015
+
+    except Exception as e:
+        logging.exception(f"Error updating BUILD_DATE in Version.h: {e}")  # noqa: LOG015
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Scrape SnowCrows benchmark builds and metadata")
 
@@ -459,6 +490,9 @@ def main() -> int:
     )
 
     try:
+        # Update BUILD_DATE in Version.h at start of execution
+        update_version_header_build_date()
+
         if args.manual:
             manual_file = SCRIPT_DIR.parent / "internal_data" / "manual_log_list.json"
             if manual_file.exists():

@@ -111,7 +111,7 @@ class SnowCrowsSkillExtractor:
 
             # Get the parent container that has the skill icons
             skills_container = skills_sections[0].find_element(
-                By.XPATH, "./ancestor::div[contains(@class, 'relative')]"
+                By.XPATH, "./ancestor::div[contains(@class, 'relative')]",
             )
 
             # Find all skill icon divs within this container

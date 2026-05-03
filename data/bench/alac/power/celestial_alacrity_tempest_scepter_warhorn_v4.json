@@ -1,0 +1,787 @@
+{
+  "rotation": [
+    [
+      [
+        -0.434,
+        103340,
+        517.0,
+        1,
+        1.0
+      ],
+      [
+        0.083,
+        1029985,
+        3317.0,
+        1,
+        1.0
+      ],
+      [
+        0.083,
+        1012316,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        0.282,
+        867446,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        0.401,
+        1029992,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        3.4,
+        103039,
+        483.0,
+        1,
+        1.0
+      ],
+      [
+        3.883,
+        1029998,
+        833.0,
+        1,
+        1.0
+      ],
+      [
+        4.716,
+        103105,
+        684.0,
+        1,
+        1.0
+      ],
+      [
+        4.834,
+        103048,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        5.033,
+        103134,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        5.4,
+        1029995,
+        433.0,
+        1,
+        1.0
+      ],
+      [
+        5.833,
+        1029994,
+        800.0,
+        1,
+        1.0
+      ],
+      [
+        6.284,
+        102820,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        6.633,
+        103081,
+        684.0,
+        1,
+        1.0
+      ],
+      [
+        7.317,
+        103289,
+        399.0,
+        1,
+        1.0
+      ],
+      [
+        7.716,
+        1030000,
+        451.0,
+        1,
+        1.0
+      ],
+      [
+        7.767,
+        102870,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        8.167,
+        102858,
+        750.0,
+        1,
+        1.0
+      ],
+      [
+        8.917,
+        1029997,
+        833.0,
+        1,
+        1.0
+      ],
+      [
+        9.034,
+        102974,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        9.75,
+        1029996,
+        850.0,
+        1,
+        1.0
+      ],
+      [
+        10.6,
+        103340,
+        517.0,
+        1,
+        1.0
+      ],
+      [
+        11.117,
+        103158,
+        1400.0,
+        1,
+        1.0
+      ],
+      [
+        12.35,
+        867446,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        12.684,
+        1029988,
+        2750.0,
+        1,
+        1.0
+      ],
+      [
+        15.434,
+        102858,
+        766.0,
+        1,
+        1.0
+      ],
+      [
+        16.2,
+        103080,
+        317.0,
+        1,
+        1.0
+      ],
+      [
+        16.351,
+        102974,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        16.634,
+        102820,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        16.8,
+        103289,
+        400.0,
+        1,
+        1.0
+      ],
+      [
+        17.234,
+        103081,
+        683.0,
+        1,
+        1.0
+      ],
+      [
+        17.917,
+        1030001,
+        850.0,
+        1,
+        1.0
+      ],
+      [
+        18.767,
+        103081,
+        667.0,
+        1,
+        1.0
+      ],
+      [
+        19.434,
+        103289,
+        400.0,
+        1,
+        1.0
+      ],
+      [
+        19.634,
+        103035,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        19.634,
+        1012316,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        19.834,
+        103105,
+        683.0,
+        1,
+        1.0
+      ],
+      [
+        20.517,
+        103039,
+        483.0,
+        1,
+        1.0
+      ],
+      [
+        20.884,
+        1029992,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        21.0,
+        103325,
+        600.0,
+        1,
+        1.0
+      ],
+      [
+        21.6,
+        103325,
+        600.0,
+        1,
+        1.0
+      ],
+      [
+        22.2,
+        103325,
+        600.0,
+        1,
+        1.0
+      ],
+      [
+        22.8,
+        103325,
+        150.0,
+        1,
+        1.0
+      ],
+      [
+        22.95,
+        103340,
+        533.0,
+        1,
+        1.0
+      ],
+      [
+        23.483,
+        1029999,
+        834.0,
+        1,
+        1.0
+      ],
+      [
+        24.317,
+        103325,
+        116.0,
+        1,
+        1.0
+      ],
+      [
+        24.433,
+        103105,
+        684.0,
+        1,
+        1.0
+      ],
+      [
+        25.117,
+        1029985,
+        3318.0,
+        1,
+        1.0
+      ],
+      [
+        25.118,
+        1012316,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        25.434,
+        867446,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        28.435,
+        103039,
+        483.0,
+        1,
+        1.0
+      ],
+      [
+        28.918,
+        1029998,
+        833.0,
+        1,
+        1.0
+      ],
+      [
+        29.751,
+        103105,
+        684.0,
+        1,
+        1.0
+      ],
+      [
+        29.885,
+        103048,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        30.001,
+        103134,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        30.435,
+        1029995,
+        449.0,
+        1,
+        1.0
+      ],
+      [
+        30.884,
+        1029994,
+        801.0,
+        1,
+        1.0
+      ],
+      [
+        31.435,
+        102820,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        31.685,
+        103081,
+        667.0,
+        1,
+        1.0
+      ],
+      [
+        32.352,
+        103289,
+        400.0,
+        1,
+        1.0
+      ],
+      [
+        32.752,
+        1030000,
+        450.0,
+        1,
+        1.0
+      ],
+      [
+        33.002,
+        102870,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        33.202,
+        102858,
+        749.0,
+        1,
+        1.0
+      ],
+      [
+        33.951,
+        1029997,
+        850.0,
+        1,
+        1.0
+      ],
+      [
+        34.035,
+        102974,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        34.801,
+        103340,
+        517.0,
+        1,
+        1.0
+      ],
+      [
+        35.318,
+        103158,
+        1317.0,
+        1,
+        1.0
+      ],
+      [
+        36.685,
+        1029996,
+        833.0,
+        1,
+        1.0
+      ],
+      [
+        37.919,
+        1029988,
+        2766.0,
+        1,
+        1.0
+      ],
+      [
+        38.202,
+        867446,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        40.751,
+        102858,
+        767.0,
+        1,
+        1.0
+      ],
+      [
+        41.518,
+        103080,
+        317.0,
+        1,
+        1.0
+      ],
+      [
+        41.718,
+        102974,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        41.92,
+        1029992,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        42.086,
+        102820,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        42.285,
+        103289,
+        400.0,
+        1,
+        1.0
+      ],
+      [
+        42.685,
+        103081,
+        1200.0,
+        1,
+        1.0
+      ],
+      [
+        43.885,
+        103309,
+        550.0,
+        1,
+        1.0
+      ],
+      [
+        44.602,
+        103081,
+        685.0,
+        1,
+        1.0
+      ],
+      [
+        45.286,
+        103035,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        45.287,
+        103325,
+        231.0,
+        1,
+        1.0
+      ],
+      [
+        45.287,
+        1012316,
+        0.0,
+        1,
+        1.0
+      ],
+      [
+        45.518,
+        103039,
+        484.0,
+        1,
+        1.0
+      ],
+      [
+        46.002,
+        103325,
+        1200.0,
+        1,
+        1.0
+      ]
+    ]
+  ],
+  "skillMap": {
+    "s103340": {
+      "name": "Signet of Fire",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_78F000A3121FCFF9B56EA62625186F0E06D8A458_103340.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029985": {
+      "name": "Overload Fire",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_3A04F5D420A86664A3044B950E145E022A49D8AA_1029985.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1012316": {
+      "name": "Sunspot",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_1405047ED70DE30F80B1F6304A787B215BB50878_1012316.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s867446": {
+      "name": "Flame Barrage",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_64A5054179704B60614F90964DE1FB3D39AEC972_867446.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029992": {
+      "name": "\"Feel the Burn!\"",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_2963BBB55948D8C0C96CCB96B5100D2999C7DF09_1029992.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103039": {
+      "name": "Phoenix",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_000E1F53624D2F9B222E17D02A5A5ED40417CAB7_103039.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029998": {
+      "name": "Heat Sync",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_6B4C0B3DFDB4FDDCB22552719D980D9E4AE2C9D1_1029998.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103105": {
+      "name": "Dragon's Tooth",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_139899C1026E93EE0EDC44030B11E310E27D9807_103105.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103048": {
+      "name": "Air Attunement",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_4857F59020DE3B0950B9C91F3D234A1C1932984A_103048.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103134": {
+      "name": "Lightning Strike",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_9C090BF7E893030BABD5DC4BA4020262AD91CE2C_103134.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029995": {
+      "name": "Lightning Orb",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_F94EF9AA5A3B073807426D499F6353C91F7BC09F_1029995.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029994": {
+      "name": "Cyclone",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_3B78057FC723254A0BCDAEAC0D9D49E290F6F9D8_1029994.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s102820": {
+      "name": "Water Attunement",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_737E1B9F7855B9F5D3DE1C990CD42118EF3D1C92_102820.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103081": {
+      "name": "Water Trident",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_43AF784618DAC97FFAB43518A9F7B204A32335FA_103081.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103289": {
+      "name": "Shatterstone",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_801B94942A7411A4379E58C6BA363CA31D2AFCBB_103289.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1030000": {
+      "name": "Tidal Surge",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_466520602A5AFD1D46454AAED74B5849C40F6FBA_1030000.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s102870": {
+      "name": "Earth Attunement",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_4B8056D9BD080DC8E74AE6A57B2B383A2D4265C9_102870.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s102858": {
+      "name": "Rock Barrier",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_C5CB69247473AE2DEB35DB5F952A0C3832CC14F2_102858.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029997": {
+      "name": "Dust Storm",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_210E23C1C2BE30F21C1C98C6FF4B053DFFC9BA1C_1029997.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s102974": {
+      "name": "Hurl",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_BB59A576C805054EB94C66D8190490F273C7BBED_102974.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029996": {
+      "name": "Sand Squall",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_7B047DE80C026DCF420E43DD16D80409E8C679A4_1029996.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103158": {
+      "name": "Stone Shards",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_66441BE066120A2590B5AF031D56E221189ADC68_103158.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029988": {
+      "name": "Overload Earth",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_975A1DE89BA70721BD0E0F6D601C259066F8D468_1029988.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103080": {
+      "name": "Dust Devil",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_EA6A082902800CC552393F24E03240A7A7D9C511_103080.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1030001": {
+      "name": "Water Globe",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_5CFE011C13BB571BB2735FF729A1FB0F6A31BAD7_1030001.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103035": {
+      "name": "Fire Attunement",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_1C91E9C799469ACC6EAF1ACD4B0AD8ACAB0C69A2_103035.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103325": {
+      "name": "Flamestrike",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_F3FBE8FF4D405637C7D61CB552A6451BB5F2D33F_103325.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s1029999": {
+      "name": "Wildfire",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_9E33D36DB142E4F9C7C21CA9CD06D76B000FE506_1029999.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s103309": {
+      "name": "Ice Shards",
+      "icon": "https://dps.report/cache/https_render.guildwars2.com_file_5DAC69FFBE4850EE6F9FA2532616C128D7AEF957_103309.png",
+      "traitProc": false,
+      "gearProc": false
+    }
+  },
+  "SkillKeyMapping": {
+    "slot_6": -1,
+    "slot_7": -1,
+    "slot_8": -1,
+    "slot_9": -1,
+    "slot_0": -1
+  },
+  "buildMetadata": {
+    "name": "Celestial Alacrity Tempest Scepter Warhorn",
+    "profession": "elementalist",
+    "elite_spec": "tempest",
+    "build_type": "power",
+    "benchmark_type": "alac",
+    "url": "https://snowcrows.com/builds/raids/elementalist/celestial-alacrity-tempest-scepter-warhorn",
+    "dps_report_url": "",
+    "overall_dps": 21250
+  }
+}

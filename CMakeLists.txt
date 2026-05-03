@@ -97,7 +97,7 @@ set_target_properties(GW2RotaHelper PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_SOURCE_DIR}/bin/release"
 )
 
-set(LOWER_VERSION "4.3.0.0")
+set(LOWER_VERSION "4.4.0.0")
 
 add_custom_command(TARGET GW2RotaHelper POST_BUILD
     COMMAND python "${CMAKE_SOURCE_DIR}/scripts/create_version_file.py" "--lower_version=${LOWER_VERSION}" "--header_path=${CMAKE_SOURCE_DIR}/src/Version.h"
@@ -114,4 +114,8 @@ add_custom_command(TARGET GW2RotaHelper POST_BUILD
         "${CMAKE_SOURCE_DIR}/data"
         "D:/GW2/addons/GW2RotaHelper" || (exit 0)
     COMMENT "Copying data."
+)
+add_custom_command(TARGET GW2RotaHelper POST_BUILD
+    COMMAND python "${CMAKE_SOURCE_DIR}/scripts/create_benchmark_excel.py"
+    COMMENT "Creating Excel sheet"
 )
