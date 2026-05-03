@@ -15,6 +15,7 @@ public:
     void render_status();
     void render_precast_window();
     void render_skill_slots_window();
+    void render_custom_grey_skills_window();
     void render_horizontal_settings();
     void render_options_checkboxes();
     void render_debug_window(bool &show_debug_window);
@@ -59,4 +60,5 @@ public:
     bool open_combo_next_frame = false;
     bool show_precast_window = false;
     bool show_skill_slots_window = false;
+    bool show_custom_grey_skills_window = false;
 };

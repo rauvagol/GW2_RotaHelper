@@ -459,7 +459,9 @@ void RotationRenderType::render_skill_texture(const RotationStep &rotation_step,
 {
     const auto is_special_skill = rotation_step.is_special_skill;
     auto tint_color = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-    if (is_special_skill)
+    const auto custom_grey =
+        Settings::CustomGreySkills.count(static_cast<uint32_t>(rotation_step.skill_data.skill_id)) > 0;
+    if (is_special_skill || custom_grey)
         tint_color = ImVec4(0.5f, 0.5f, 0.5f, 1.0f);
     if (alpha_offset != 0.0f)
         tint_color.w = max(0.1f, min(1.0f, tint_color.w + alpha_offset));

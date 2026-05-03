@@ -389,6 +389,123 @@ void OptionsRenderType::render_precast_window()
     ImGui::End();
 }
 
+void OptionsRenderType::render_custom_grey_skills_window()
+{
+    if (!show_custom_grey_skills_window)
+        return;
+
+    ImGui::SetNextWindowSize(ImVec2(460, 320), ImGuiCond_Once);
+    if (ImGui::Begin("Custom Greyed Out Skills###GW2RotaHelper_CustomGrey", &show_custom_grey_skills_window))
+    {
+        ImGui::TextWrapped(
+            "Enter skill IDs (numeric) that should always be rendered as greyed out in the rotation view.");
+        ImGui::TextWrapped("Right-click an entry to remove it.");
+        ImGui::Separator();
+
+        static char skill_id_input[32] = "";
+        static std::string input_error;
+
+        ImGui::SetNextItemWidth(200.0f);
+        const bool enter_pressed = ImGui::InputText("Skill ID",
+                                                    skill_id_input,
+                                                    sizeof(skill_id_input),
+                                                    ImGuiInputTextFlags_CharsDecimal |
+                                                        ImGuiInputTextFlags_EnterReturnsTrue);
+
+        ImGui::SameLine();
+
+        const bool add_clicked = ImGui::Button("Add");
+
+        if ((enter_pressed || add_clicked) && skill_id_input[0] != '\0')
+        {
+            try
+            {
+                const auto id = static_cast<uint32_t>(std::stoul(skill_id_input));
+                if (id > 0)
+                {
+                    Settings::CustomGreySkills.insert(id);
+                    Settings::Save(Globals::SettingsPath);
+                    input_error.clear();
+                }
+                else
+                {
+                    input_error = "Skill ID must be greater than 0.";
+                }
+            }
+            catch (...)
+            {
+                input_error = "Invalid skill ID.";
+            }
+            skill_id_input[0] = '\0';
+        }
+
+        if (!input_error.empty())
+            ImGui::TextColored(ImVec4(1.0f, 0.3f, 0.3f, 1.0f), "%s", input_error.c_str());
+
+        ImGui::Separator();
+
+        if (Settings::CustomGreySkills.empty())
+        {
+            ImGui::TextDisabled("No custom greyed out skills configured yet.");
+        }
+        else
+        {
+            ImGui::BeginChild("custom_grey_list", ImVec2(0, 150), true, ImGuiWindowFlags_AlwaysVerticalScrollbar);
+
+            uint32_t to_remove = 0;
+            int counter = 0;
+            for (const auto &id : Settings::CustomGreySkills)
+            {
+                ImGui::PushID(counter++);
+
+                const auto label = std::to_string(id);
+                const auto skill_id_enum = static_cast<SkillID>(id);
+                const auto skill_it = Globals::RotationRun.rotation_skills.find(skill_id_enum);
+                const auto has_texture =
+                    skill_it != Globals::RotationRun.rotation_skills.end() && skill_it->second.texture;
+
+                if (has_texture)
+                {
+                    ImGui::Image((ImTextureID)skill_it->second.texture,
+                                 ImVec2(24.0f, 24.0f),
+                                 ImVec2(0, 0),
+                                 ImVec2(1, 1),
+                                 ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
+                    ImGui::SameLine();
+                    ImGui::Text("%s (ID: %u)", skill_it->second.name.c_str(), id);
+                }
+                else
+                {
+                    ImGui::Text("ID: %u", id);
+                }
+
+                if (ImGui::IsItemHovered() && ImGui::IsMouseClicked(ImGuiMouseButton_Right))
+                    to_remove = id;
+
+                ImGui::PopID();
+            }
+
+            if (to_remove != 0)
+            {
+                Settings::CustomGreySkills.erase(to_remove);
+                Settings::Save(Globals::SettingsPath);
+            }
+
+            ImGui::EndChild();
+        }
+
+        ImGui::Separator();
+
+        if (ImGui::Button("Clear All"))
+        {
+            Settings::CustomGreySkills.clear();
+            Settings::Save(Globals::SettingsPath);
+        }
+    }
+
+    ImGui::End();
+}
+
 void SetCurrentSkillMappings()
 {
     auto &current_mappings = Settings::UtilitySkillSlots[Globals::RenderData.current_build_key];
@@ -852,7 +969,7 @@ void OptionsRenderType::render_options_checkboxes()
         }
         SetTooltip("Shows the rotation window of the last 2, the current and the next 7 skills.");
 
-        const auto button_width = ImGui::GetWindowSize().x * 0.5f - ImGui::GetStyle().ItemSpacing.x * 0.5f;
+        const auto button_width = ImGui::GetWindowSize().x * 0.33f - ImGui::GetStyle().ItemSpacing.x * 0.67f;
 
         if (ImGui::Button("Precast Window", ImVec2(button_width, 0)))
             show_precast_window = !show_precast_window;
@@ -862,6 +979,11 @@ void OptionsRenderType::render_options_checkboxes()
         if (ImGui::Button("Skill Slot Mapping", ImVec2(button_width, 0)))
             show_skill_slots_window = !show_skill_slots_window;
 
+        ImGui::SameLine();
+
+        if (ImGui::Button("Custom Grey Skills", ImVec2(button_width, 0)))
+            show_custom_grey_skills_window = !show_custom_grey_skills_window;
+
         if (Globals::RotationRun.rotation_skills.empty())
             Globals::RotationRun.get_rotation_skills();
 
@@ -870,6 +992,9 @@ void OptionsRenderType::render_options_checkboxes()
 
         if (show_skill_slots_window)
             render_skill_slots_window();
+
+        if (show_custom_grey_skills_window)
+            render_custom_grey_skills_window();
     }
 
 #ifdef _DEBUG

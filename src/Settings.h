@@ -3,6 +3,7 @@
 
 #include <filesystem>
 #include <mutex>
+#include <set>
 #include <string>
 #include <map>
 #include <vector>
@@ -28,6 +29,7 @@ extern const char *WINDOW_SIZE_LEFT;
 extern const char *WINDOW_SIZE_RIGHT;
 extern const char *PRECAST_SKILLS;
 extern const char *UTILITY_SKILL_SLOTS;
+extern const char *CUSTOM_GREY_SKILLS;
 
 namespace Settings
 {
@@ -54,6 +56,7 @@ extern uint32_t WindowSizeLeft;
 extern uint32_t WindowSizeRight;
 extern std::map<std::string, std::vector<uint32_t>> PrecastSkills;
 extern std::map<std::string, std::map<std::string, uint32_t>> UtilitySkillSlots;
+extern std::set<uint32_t> CustomGreySkills;
 } // namespace Settings
 
 #endif
