@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import PatternFill
 
 
@@ -127,15 +126,15 @@ def create_excel_report(benchmark_data: list[dict[str, Any]], output_file: Path)
                 fill_type="solid"
             )
 
-        colors_sheet.cell(row=1, column=5).value = "Elite Spec"
-        colors_sheet.cell(row=1, column=6).value = "Profession"
-        colors_sheet.cell(row=1, column=5).fill = colors_header_fill
-        colors_sheet.cell(row=1, column=6).fill = colors_header_fill
+        colors_sheet.cell(row=7, column=5).value = "Elite Spec"
+        colors_sheet.cell(row=7, column=6).value = "Profession"
+        colors_sheet.cell(row=7, column=5).fill = colors_header_fill
+        colors_sheet.cell(row=7, column=6).fill = colors_header_fill
         for sidx, srow in spec_to_profession.iterrows():
-            colors_sheet.cell(row=sidx + 2, column=5).value = srow["Elite Spec"].title()
-            colors_sheet.cell(row=sidx + 2, column=6).value = srow["Profession"].title()
+            colors_sheet.cell(row=sidx + 8, column=5).value = srow["Elite Spec"].title()
+            colors_sheet.cell(row=sidx + 8, column=6).value = srow["Profession"].title()
             prof_color = profession_colors.get(srow["Profession"].lower(), "FFFFFFFF")
-            colors_sheet.cell(row=sidx + 2, column=6).fill = PatternFill(
+            colors_sheet.cell(row=sidx + 8, column=6).fill = PatternFill(
                 start_color=prof_color, end_color=prof_color, fill_type="solid"
             )
 
@@ -179,13 +178,11 @@ def create_excel_report(benchmark_data: list[dict[str, Any]], output_file: Path)
             type_worksheet.auto_filter.ref = f"A1:G{len(type_df) + 1}"
             type_worksheet.column_dimensions["H"].hidden = True
 
-            for prof, color in profession_colors.items():
-                fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
-                rule = FormulaRule(formula=[f'LOWER($H2)="{prof}"'], fill=fill)
-                type_worksheet.conditional_formatting.add(f"A2:A{len(type_df) + 1}", rule)
-
             for idx, row in type_df.iterrows():
                 row_num = type_df.index.get_loc(idx) + 2
+                profession = row.get("profession", "unknown").lower()
+                color = profession_colors.get(profession, "FFFFFFFF")
+                type_worksheet.cell(row=row_num, column=1).fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
                 type_worksheet.cell(row=row_num, column=5).value = f"=ROUND(C{row_num}/D{row_num}*100,2)"
                 type_worksheet.cell(row=row_num, column=6).value = f"=ROUND(D{row_num}*0.95,0)"
                 type_worksheet.cell(row=row_num, column=7).value = f"=ROUND(F{row_num}-C{row_num},0)"
