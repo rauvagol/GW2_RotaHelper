@@ -27,6 +27,35 @@
 
 namespace
 {
+std::string ps_exit_code_to_string(DWORD code)
+{
+    switch (code)
+    {
+    case 0:    return "Success";
+    case 1:    return "Generic error";
+    case 259:  return "Still active (STILL_ACTIVE) - process did not finish in time";
+    // PowerShell exit codes
+    case 2:    return "Misuse of shell command";
+    case 3:    return "Command invoked but could not complete";
+    case 5:    return "Access denied";
+    default:
+        {
+            // Try to get a system message for Win32 error codes
+            char buf[256] = {};
+            DWORD len = FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                                      nullptr, code, 0, buf, sizeof(buf), nullptr);
+            if (len > 0)
+            {
+                // Trim trailing newline/whitespace
+                while (len > 0 && (buf[len - 1] == '\n' || buf[len - 1] == '\r' || buf[len - 1] == ' '))
+                    buf[--len] = '\0';
+                return std::string(buf);
+            }
+            return "Unknown exit code";
+        }
+    }
+}
+
 void get_keybind_secondary_info(size_t button2_start, const std::string &line, KeybindInfo &keybind)
 {
     auto device2_start = line.find("device2=\"");
@@ -591,7 +620,8 @@ bool ExtractZipFile(const std::filesystem::path &zipPath, const std::filesystem:
             if (exitCode != 0)
             {
                 Globals::BenchDataDownloadState = DownloadState::FAILED;
-                auto errorMsg = "ZIP extraction failed with exit code: " + std::to_string(exitCode);
+                auto errorMsg = "ZIP extraction failed with exit code: " + std::to_string(exitCode) +
+                                " (" + ps_exit_code_to_string(exitCode) + ")";
                 (void)Globals::APIDefs->Log(LOGL_CRITICAL, "GW2RotaHelper", errorMsg.c_str());
             }
 

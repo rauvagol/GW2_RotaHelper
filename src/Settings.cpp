@@ -135,7 +135,7 @@ bool ShowKeybind = false;
 bool StrictModeForSkillDetection = false;
 bool EasySkillMode = false;
 std::filesystem::path XmlSettingsPath;
-std::string VersionOfLastBenchFilesUpdate = "0.1.0.0";
+std::string VersionOfLastBenchFilesUpdate = "0.0.0.0";
 bool SkipBenchFileUpdate = false;
 bool BenchUpdateFailedBefore = false;
 bool UseSkillEvents = false;
