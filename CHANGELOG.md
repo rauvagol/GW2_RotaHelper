@@ -17,6 +17,7 @@ An increase in the third number indicates bugfixes only.
 ## Notes
 
 - Added more detailed error codes
+- Updated bench logs
 
 ## 4.4.0 - 2026-05-03
 
