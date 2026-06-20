@@ -2304,7 +2304,7 @@
     "build_type": "condition",
     "benchmark_type": "quick",
     "url": "https://snowcrows.com/builds/raids/ranger/condition-quickness-untamed-axe-dagger-dagger-torch",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/19d1-20260414-205010_golem",
     "overall_dps": 35006
   }
 }

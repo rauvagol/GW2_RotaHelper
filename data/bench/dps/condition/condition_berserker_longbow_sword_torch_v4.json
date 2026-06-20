@@ -1650,7 +1650,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/warrior/condition-berserker-longbow-sword-torch",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/1ja4-20260414-231425_golem",
     "overall_dps": 44151
   }
 }

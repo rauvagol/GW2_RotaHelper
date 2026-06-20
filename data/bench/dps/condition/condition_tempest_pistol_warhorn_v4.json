@@ -1405,7 +1405,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/elementalist/condition-tempest-pistol-warhorn",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/B38a-20260414-224425_golem",
     "overall_dps": 41703
   }
 }

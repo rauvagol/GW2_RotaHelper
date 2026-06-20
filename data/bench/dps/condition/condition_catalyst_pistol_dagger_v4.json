@@ -2212,7 +2212,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/elementalist/condition-catalyst-pistol-dagger",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/Q2mp-20260416-234551_golem",
     "overall_dps": 38625
   }
 }

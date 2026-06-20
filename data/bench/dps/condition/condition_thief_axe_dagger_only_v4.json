@@ -1395,7 +1395,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/thief/condition-thief-axe-dagger-only",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/dEeo-20260416-222119_golem",
     "overall_dps": 42108
   }
 }

@@ -2485,7 +2485,7 @@
     "build_type": "condition",
     "benchmark_type": "quick",
     "url": "https://snowcrows.com/builds/raids/revenant/condition-quickness-herald-spear-only",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/GGnC-20260415-120411_golem",
     "overall_dps": 29698
   }
 }

@@ -1685,7 +1685,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/engineer/condition-amalgam-three-kits-spear",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/U2P0-20260527-224210_golem",
     "overall_dps": 43533
   }
 }

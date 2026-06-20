@@ -1958,7 +1958,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/engineer/condition-mechanist-one-kit-spear",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/TC3k-20260414-194954_golem",
     "overall_dps": 40667
   }
 }

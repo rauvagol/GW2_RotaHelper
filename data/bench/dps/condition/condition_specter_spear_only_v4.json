@@ -1798,7 +1798,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/thief/condition-specter-spear-only",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/iErd-20260507-135724_golem",
     "overall_dps": 41653
   }
 }

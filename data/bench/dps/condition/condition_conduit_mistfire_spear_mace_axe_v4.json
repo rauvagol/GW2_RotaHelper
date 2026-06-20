@@ -1957,7 +1957,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/revenant/condition-conduit-mistfire-spear-mace-axe",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/CFsA-20260414-232817_golem",
     "overall_dps": 39982
   }
 }

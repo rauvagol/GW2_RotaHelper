@@ -1600,7 +1600,7 @@
     "build_type": "power",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/engineer/power-holosmith-sword-pistol",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/nrc1-20260118-001246_golem",
     "overall_dps": 41981
   }
 }

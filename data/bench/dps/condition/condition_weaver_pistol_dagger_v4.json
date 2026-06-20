@@ -1770,7 +1770,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/elementalist/condition-weaver-pistol-dagger",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/26i4-20260418-202046_golem",
     "overall_dps": 43829
   }
 }

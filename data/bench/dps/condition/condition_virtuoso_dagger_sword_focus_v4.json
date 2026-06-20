@@ -1624,7 +1624,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/mesmer/condition-virtuoso-dagger-sword-focus",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/akdn-20260414-192620_golem",
     "overall_dps": 39115
   }
 }

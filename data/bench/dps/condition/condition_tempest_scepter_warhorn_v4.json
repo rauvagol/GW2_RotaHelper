@@ -1288,7 +1288,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/elementalist/condition-tempest-scepter-warhorn",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/s53h-20260426-124808_golem",
     "overall_dps": 40470
   }
 }

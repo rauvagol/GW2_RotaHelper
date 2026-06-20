@@ -1054,7 +1054,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/mesmer/condition-chronomancer-staff-scepter-torch",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/kfCZ-20260119-212811_golem",
     "overall_dps": 42653
   }
 }

@@ -1201,7 +1201,7 @@
     "build_type": "condition",
     "benchmark_type": "dps",
     "url": "https://snowcrows.com/builds/raids/guardian/condition-willbender-pistol-torch-pistol",
-    "dps_report_url": "",
+    "dps_report_url": "https://dps.report/txt6-20260416-200945_golem",
     "overall_dps": 42265
   }
 }
