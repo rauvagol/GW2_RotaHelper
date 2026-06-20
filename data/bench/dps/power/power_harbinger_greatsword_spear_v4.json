@@ -16,6 +16,13 @@
         1.0
       ],
       [
+        0.487,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         0.767,
         3379164,
         474.0,
@@ -264,6 +271,13 @@
         18.081,
         3379162,
         840.0,
+        1,
+        1.0
+      ],
+      [
+        18.921,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -530,6 +544,13 @@
         38.439,
         1012926,
         482.0,
+        1,
+        1.0
+      ],
+      [
+        38.963,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -814,6 +835,13 @@
         1.0
       ],
       [
+        60.12,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         60.281,
         1012924,
         1079.0,
@@ -1073,6 +1101,13 @@
         1.0
       ],
       [
+        80.804,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         80.961,
         3379166,
         837.0,
@@ -1294,6 +1329,12 @@
     "s2479394": {
       "name": "Elixir of Ambition",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_29ABACF1A407D95BD9D1A232F51C6E0003413010_2479394.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

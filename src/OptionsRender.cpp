@@ -1471,11 +1471,18 @@ void OptionsRenderType::render_snowcrows_build_link()
     ImGui::SameLine();
 
     const auto button_text2 = "Open DPS Report Link";
+    const auto dps_url_available = !Globals::RotationRun.meta_data.dps_report_url.empty();
+
     if (ImGui::Button(button_text2, ImVec2(button_width, 0)))
         open_url_in_browser(Globals::RotationRun.meta_data.dps_report_url);
 
     if (ImGui::IsItemHovered())
-        ImGui::SetTooltip("Open the Dps.Report in your default browser");
+    {
+        if (dps_url_available)
+            ImGui::SetTooltip("Open the Dps.Report in your default browser");
+        else
+            ImGui::SetTooltip("No DPS Report URL available for this build");
+    }
 }
 
 void OptionsRenderType::render_select_bench()

@@ -31,7 +31,14 @@ void SetTooltip(const std::vector<std::string> &texts)
 
 void open_url_in_browser(const std::string &url)
 {
-    ShellExecuteA(nullptr, "open", url.c_str(), nullptr, nullptr, SW_SHOWNORMAL);
+    if (url.empty())
+        return;
+
+    const auto log_msg = std::string("Opening URL: ") + url;
+    (void)Globals::APIDefs->Log(LOGL_INFO, "GW2RotaHelper", log_msg.c_str());
+
+    std::wstring wurl(url.begin(), url.end());
+    ShellExecuteW(nullptr, L"open", wurl.c_str(), nullptr, nullptr, SW_SHOWNORMAL);
 }
 
 float calculate_centered_position(const std::vector<std::string> &items, const float add_width)
@@ -110,5 +117,8 @@ bool IsVersionIsRange(const std::string version,
                       const std::string &lower_version_bound,
                       const std::string &upper_version_bound)
 {
+    if (version > upper_version_bound)
+        return true;
+
     return version >= lower_version_bound && version <= upper_version_bound;
 }

@@ -16,6 +16,13 @@
         1.0
       ],
       [
+        0.073,
+        6,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         2.922,
         103035,
         0.0,
@@ -1259,6 +1266,12 @@
     "s103229": {
       "name": "Arcane Blast",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_BCEB22C05BD13F226612C81339AF9A7647F7B454_103229.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s6": {
+      "name": "Relic of Fireworks",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_6_6c_Relic_of_Fireworks.png",
       "traitProc": false,
       "gearProc": false
     },

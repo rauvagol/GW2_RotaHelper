@@ -275,6 +275,13 @@
         1.0
       ],
       [
+        21.394,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         21.633,
         2029306,
         607.0,
@@ -467,6 +474,13 @@
         36.793,
         103010,
         566.0,
+        1,
+        1.0
+      ],
+      [
+        37.358,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -765,6 +779,13 @@
         1.0
       ],
       [
+        62.234,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         62.434,
         2029306,
         602.0,
@@ -957,6 +978,13 @@
         77.517,
         103010,
         556.0,
+        1,
+        1.0
+      ],
+      [
+        78.073,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -1258,6 +1286,12 @@
     "s58459": {
       "name": "Signet of Spite",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_596707B904509879083B6F6697012448A7420A63_58459.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

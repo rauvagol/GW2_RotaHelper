@@ -548,6 +548,13 @@
         1.0
       ],
       [
+        52.704,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         52.736,
         104065,
         233.0,
@@ -1299,6 +1306,12 @@
     "s1770615": {
       "name": "Steal Precision",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_1DFF7D36F880D358AB020FC03CFCCF33C409C7C5_1770615.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

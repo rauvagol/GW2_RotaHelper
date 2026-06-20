@@ -1038,6 +1038,13 @@
         1.0
       ],
       [
+        75.119,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         75.12,
         104065,
         159.0,
@@ -1419,6 +1426,12 @@
     "s1770611": {
       "name": "Malicious Restoration",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_C1E7E96F22330A9AF3DBDAF5245430CBA17FB0A3_1770611.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

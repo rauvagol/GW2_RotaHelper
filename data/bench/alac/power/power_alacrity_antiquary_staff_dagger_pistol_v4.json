@@ -58,6 +58,13 @@
         1.0
       ],
       [
+        3.676,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         3.718,
         104065,
         75.0,
@@ -345,6 +352,13 @@
         1.0
       ],
       [
+        22.675,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         22.797,
         3680215,
         601.0,
@@ -625,6 +639,13 @@
         1.0
       ],
       [
+        43.644,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         43.762,
         3680214,
         1395.0,
@@ -796,6 +817,13 @@
         53.879,
         3680212,
         444.0,
+        1,
+        1.0
+      ],
+      [
+        54.323,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -1213,6 +1241,13 @@
         1.0
       ],
       [
+        85.44,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         85.52,
         3680214,
         1397.0,
@@ -1444,6 +1479,12 @@
     "s3680220": {
       "name": "Canach-Coin Toss",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_CA51F09750F4C7C70A546E9F040EEF2977370DFF_3680220.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

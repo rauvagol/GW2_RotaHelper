@@ -65,6 +65,13 @@
         1.0
       ],
       [
+        3.152,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         3.232,
         3680214,
         1405.0,
@@ -348,6 +355,13 @@
         25.716,
         3256390,
         522.0,
+        1,
+        1.0
+      ],
+      [
+        26.237,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -674,6 +688,13 @@
         1.0
       ],
       [
+        48.725,
+        9999,
+        0.0,
+        1,
+        1.0
+      ],
+      [
         48.84,
         3680214,
         1400.0,
@@ -810,6 +831,13 @@
         58.596,
         3256390,
         564.0,
+        1,
+        1.0
+      ],
+      [
+        59.159,
+        9999,
+        0.0,
         1,
         1.0
       ],
@@ -1519,6 +1547,12 @@
     "s3379191": {
       "name": "Falling Spider",
       "icon": "https://dps.report/cache/https_render.guildwars2.com_file_BEA5D1B8D1BC0F97690CE57CD03DADB9DA7F4004_3379191.png",
+      "traitProc": false,
+      "gearProc": false
+    },
+    "s9999": {
+      "name": "Weapon Swap",
+      "icon": "https://dps.report/cache/https_wiki.guildwars2.com_images_c_ce_Weapon_Swap_Button.png",
       "traitProc": false,
       "gearProc": false
     },

@@ -211,6 +211,10 @@ class HTMLRotationExtractor:
     def _extract_icon_id_from_url(self, img_src: str) -> int:
         """Extract skill ID from image URL"""
         try:
+            # Handle cached URLs from wiki for weapon swap
+            if "https_wiki.guildwars2.com" in img_src and "Weapon_Swap_Button" in img_src:
+                return 9999  # Use a special ID for weapon swap
+
             # Handle cached URLs: /cache/https_render.guildwars2.com_file_HASH_SKILLID.png
             if "/cache/https_render.guildwars2.com_file_" in img_src:
                 # Extract skill ID from cached URL format
@@ -248,6 +252,10 @@ class HTMLRotationExtractor:
             if match:
                 return int(match.group(1))
 
+            # Fallback for weapon swap icon from dps.report
+            if "weaponswap.png" in img_src.lower():
+                return 9999  # Use a special ID for weapon swap
+
             # Fallback: try to find any number in the URL
             numbers = re.findall(r"\d+", img_src)
             if numbers:
@@ -267,34 +275,35 @@ class HTMLRotationExtractor:
             with html_file.open(encoding="utf-8") as f:
                 html_content = f.read()
 
-            # Use regex to find all rotation skill images, capturing class attribute to filter out cancelled skills
-            # Pattern: <img src="https://render.guildwars2.com/..." or src="/cache/https_render.guildwars2.com_file_..." data-original-title="..." class="rot-icon...">
-            pattern = r'<img[^>]*src="((?:https:\/\/render\.guildwars2\.com\/[^"]*|\/cache\/https_render\.guildwars2\.com_file_[^"]*\.png))"[^>]*data-original-title="([^"]*)"[^>]*class="([^"]*rot-icon[^"]*)"[^>]*>'
+            # Pattern: <img src="..." data-original-title="..." class="rot-icon...">
+            # This pattern is now more generic to catch various src URLs
+            pattern = r'<img[^>]*src="([^"]*)"[^>]*data-original-title="([^"]*)"[^>]*class="([^"]*rot-icon[^"]*)"[^>]*>'
             matches = re.findall(pattern, html_content, re.DOTALL | re.IGNORECASE)
 
-            if not matches:
-                # Try alternative pattern with different attribute order
-                pattern2 = r'<img[^>]*data-original-title="([^"]*)"[^>]*src="((?:https:\/\/render\.guildwars2\.com\/[^"]*|\/cache\/https_render\.guildwars2\.com_file_[^"]*\.png))"[^>]*class="([^"]*rot-icon[^"]*)"[^>]*>'
-                matches = [
-                    (src, title, class_attr)
-                    for title, src, class_attr in re.findall(
-                        pattern2,
-                        html_content,
-                        re.DOTALL | re.IGNORECASE,
-                    )
-                ]
+            # Try alternative pattern with different attribute order
+            pattern2 = r'<img[^>]*data-original-title="([^"]*)"[^>]*src="([^"]*)"[^>]*class="([^"]*rot-icon[^"]*)"[^>]*>'
+            matches = matches + [
+                (src, title, class_attr)
+                for title, src, class_attr in re.findall(
+                    pattern2,
+                    html_content,
+                    re.DOTALL | re.IGNORECASE,
+                )
+            ]
 
-            if not matches:
-                # Fallback pattern - any img with rot-icon class and gw2 render URL or cached URL
-                pattern3 = r'<img[^>]*class="([^"]*rot-icon[^"]*)"[^>]*src="((?:https:\/\/render\.guildwars2\.com\/[^"]*|\/cache\/https_render\.guildwars2\.com_file_[^"]*\.png))"[^>]*data-original-title="([^"]*)"[^>]*>'
-                matches = [
-                    (src, title, class_attr)
-                    for class_attr, src, title in re.findall(
-                        pattern3,
-                        html_content,
-                        re.DOTALL | re.IGNORECASE,
-                    )
-                ]
+            # Fallback pattern - any img with rot-icon class
+            pattern3 = r'<img[^>]*class="([^"]*rot-icon[^"]*)"[^>]*src="([^"]*)"[^>]*data-original-title="([^"]*)"[^>]*>'
+            matches = matches + [
+                (src, title, class_attr)
+                for class_attr, src, title in re.findall(
+                    pattern3,
+                    html_content,
+                    re.DOTALL | re.IGNORECASE,
+                )
+            ]
+
+            # Filter out empty src attributes and non-skill images
+            matches = [m for m in matches if m[0] and ("guildwars2.com" in m[0] or "weaponswap.png" in m[0])]
 
             if not matches:
                 self.logger.warning(f"No rotation skills found in {html_file.name}")
@@ -378,7 +387,7 @@ class HTMLRotationExtractor:
                     "build_type": build_metadata.get("build_type", "power"),
                     "benchmark_type": build_metadata.get("benchmark_type", "dps"),
                     "url": url_value,
-                    "dps_report_url": build_metadata.get("dps_report_url", ""),
+                    "dps_report_url": build_metadata.get("dps_report", ""),
                     "overall_dps": build_metadata.get("overall_dps"),
                 }
             else:
