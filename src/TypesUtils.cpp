@@ -6,6 +6,8 @@
 #include <utility>
 #include <vector>
 
+#include <windows.h>
+
 #include "FileUtils.h"
 #include "Shared.h"
 #include "SkillData.h"
@@ -502,7 +504,9 @@ std::string custom_keys_to_string(Keys key)
     case Keys::EQUAL:
         return "=";
     case Keys::ZIRUMFLEX:
-        return "^";
+        if (PRIMARYLANGID(LOWORD(GetKeyboardLayout(0))) == LANG_GERMAN)
+            return "^";
+        return "`";
     case Keys::TAB:
         return "Tab";
     case Keys::F1:
